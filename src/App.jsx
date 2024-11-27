@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import './App.css'
-import Login from './components/pages/LoginPage'
+import LoginPage from './components/pages/login/LoginPage'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  //state 
+  const [count, setCount] = useState(0);
 
+   //comportements
+
+
+  //affichae (render)
   return (
     <>
       <div>
-        <Login/>
+        <LoginPage/>
       </div>
     </>
   )
