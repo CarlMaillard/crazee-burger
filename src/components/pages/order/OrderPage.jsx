@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function OrderPage () {
     //state 
@@ -7,7 +8,10 @@ export default function OrderPage () {
 
     //affichage (render)
   return    (
-    <h1>Order page !</h1>
+    <div>
+      <h1>Order page !</h1>
+      <Link to="/" end><button>Déconnexionff</button></Link>
+    </div>
     
   )          
 }
