@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ErrorPage() {
     //state 
 
@@ -5,6 +7,9 @@ export default function ErrorPage() {
 
     //affichage (render)
   return (
-    <div>ErrorPage</div>
+    <div>
+    <h1>Error page !</h1>
+    <Link to="/" end><button>Retourner à la page d'accueil</button></Link>
+  </div>
   )
 }
