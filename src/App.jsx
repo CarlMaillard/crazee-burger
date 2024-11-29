@@ -1,22 +1,23 @@
-import { useState } from 'react'
 import './App.css'
+import { Route, Routes } from 'react-router-dom';
 import LoginPage from './components/pages/login/LoginPage'
+import OrderPage from './components/pages/order/OrderPage';
+import ErrorPage from './components/pages/error/ErrorPage';
 
 
 function App() {
   //state 
-  const [count, setCount] = useState(0);
 
    //comportements
 
 
   //affichae (render)
   return (
-    <>
-      <div>
-        <LoginPage/>
-      </div>
-    </>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/order/:username" element={<OrderPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
   )
 }
 
