@@ -1,16 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function OrderPage () {
     //state 
-
+    console.log("valeur", username);
+    
     //comportements
-
+  
     //affichage (render)
   return    (
     <div>
-      <h1>Order page !</h1>
-      <Link to="/" end><button>Déconnexionff</button></Link>
+      <h1>Bonjour {username} !</h1>
+      <Link to="/"><button>Déconnexion</button></Link>
     </div>
     
   )          
