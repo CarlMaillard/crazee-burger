@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 export default function OrderPage () {
     //state 
-    console.log("valeur", username);
+    const {username} = useParams();
     
     //comportements
   

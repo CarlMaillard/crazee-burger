@@ -9,7 +9,7 @@ export default function ErrorPage() {
   return (
     <div>
     <h1>Error page !</h1>
-    <Link to="/" end><button>Retourner à la page d'accueil</button></Link>
+    <Link to="/"><button>Retourner à la page d'accueil</button></Link>
   </div>
   )
 }
