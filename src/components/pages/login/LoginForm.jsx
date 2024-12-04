@@ -24,19 +24,26 @@ export default function LoginForm() {
         //affichage (render)
 
     <LoginFormStyled action="submit" onSubmit={handleSubmit}>
-    <h1>Bienvenue chez nous !</h1>
-    <br />
-    <h2>Connectez-vous </h2>
-        <input value={inputValue}  type="text" placeholder='Entrez votre prénom...' onChange={handleChange} required/>
-        <button> Accéder à votre espace</button>
+        <div>
+            <h1>Bienvenue chez nous !</h1>
+            <br />
+            <h2>Connectez-vous </h2>
+            <input value={inputValue}  type="text" placeholder='Entrez votre prénom' onChange={handleChange} required/>
+            <button> Accéder à mon espace</button>
+        </div>
     </LoginFormStyled>     
   )
 }
 
 
-const LoginFormStyled = styled.form`
-border: 10px  solid red;
+const LoginFormStyled = styled.div `
+background: green;
+display: flex;
+flex-direction: column;
  `
+
+
+
 /** 4 methodes pour ajouter du style à un composant.
  * 1. inline style
  * 2. object style
