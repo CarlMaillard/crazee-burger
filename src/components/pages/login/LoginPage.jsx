@@ -24,6 +24,8 @@ const LoginPageStyled = styled.div`
   align-items: center;
   justify-content: center;
 
+  
+
   ::before{
     content: "";
     background: url("./images/F03-burger-background.jpg") rgb(0, 0, 0, 0.7);
