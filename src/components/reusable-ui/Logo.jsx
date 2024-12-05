@@ -11,17 +11,18 @@ export default function Logo() {
 }
 
 const LogoStyled = styled.div`
-  border: 1px solid blue;
-  background: yellow;
+  background: transparent;
   display: flex;
   align-items: center;
-  transform: scale(2.5);
+  /* transform: scale(2.5); */
+  
+  
 
   h1 {
     display: inline;
     text-align: center;
     color: orange;
-    font-size: 36px;
+    font-size: 115px;
     line-height: 1em;
     font-weight: 700;
     text-transform: uppercase;
@@ -32,8 +33,7 @@ const LogoStyled = styled.div`
   img {
     object-fit: contain;
     object-position: center;
-    height: 60px;
-    width: 80px;
+    height: 150px;
     margin: 0 5px;
   }
 `;

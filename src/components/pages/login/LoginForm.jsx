@@ -45,8 +45,7 @@ export default function LoginForm() {
 }
 
 
-const LoginFormStyled = styled.div `
-background-color: green;
+const LoginFormStyled = styled.form `
 text-align: center;
 max-width: 500px;
 min-width: 400px;
@@ -136,7 +135,7 @@ h2 {
     &:active {
         color: white;
         background-color: #ff9f1b;
-        border: 1px solid #ff9f1b;
+        border: 1px solid #ff9f1b; 
     }
 
     &:disabled {
@@ -153,7 +152,6 @@ h2 {
     }
 }
  `
-
 
 /** 4 methodes pour ajouter du style à un composant.
  * 1. inline style
