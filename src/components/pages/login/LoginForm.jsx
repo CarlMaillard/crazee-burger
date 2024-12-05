@@ -35,8 +35,10 @@ export default function LoginForm() {
                 <BsPersonCircle className='icon'/>
                 <input value={inputValue}  type="text" placeholder='Entrez votre prénom' onChange={handleChange} required/>
             </div>
-            <button> Accéder à mon espace <FaChevronRight className='icon'/></button>
-            
+            <button className='button-with-icon'>
+                <span> Accéder à mon espace</span>
+                <FaChevronRight className='icon'/>
+            </button>            
         </div>
     </LoginFormStyled>     
   )
@@ -44,6 +46,7 @@ export default function LoginForm() {
 
 
 const LoginFormStyled = styled.div `
+background-color: green;
 text-align: center;
 max-width: 500px;
 min-width: 400px;
@@ -61,6 +64,7 @@ h1{
     color: white;
     font-size: 48px;
 }
+
 h2 {
     color: white;
     margin: 20px 10px 20px;
@@ -99,6 +103,55 @@ h2 {
     }
 
   }
+  
+.button-with-icon {
+    width:100%;
+    height: 53px;
+    background-color: orange;
+    font-family: "Open sans", cursive;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1px;
+    
+
+    
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    background-color: #ff9f1b;
+    border: 1px solid #ff9f1b;
+
+    
+    &:hover:not(:disabled) {
+        background-color: white;
+        color: #ff9f1b;
+        border: 1px solid #ff9f1b;
+        transition: all 200ms ease-out;
+    }
+
+    &:active {
+        color: white;
+        background-color: #ff9f1b;
+        border: 1px solid #ff9f1b;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+}
  `
 
 
