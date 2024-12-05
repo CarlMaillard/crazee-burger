@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { BsPersonCircle } from "react-icons/bs";
+import { FaChevronRight } from "react-icons/fa6";
+
 
 export default function LoginForm() {
  //state
@@ -28,10 +31,12 @@ export default function LoginForm() {
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous </h2>
-            <div>
+            <div className="input-with-icon">
+                <BsPersonCircle className='icon'/>
                 <input value={inputValue}  type="text" placeholder='Entrez votre prénom' onChange={handleChange} required/>
-                <button> Accéder à mon espace</button>
             </div>
+            <button> Accéder à mon espace <FaChevronRight className='icon'/></button>
+            
         </div>
     </LoginFormStyled>     
   )
@@ -61,8 +66,40 @@ h2 {
     margin: 20px 10px 20px;
     font-size: 36px;
   }
- `
 
+.input-with-icon {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px; 
+    margin: 18px 0;
+
+    .icon{
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        color: #93a2b1;
+
+    }
+
+    input{
+    border: none;
+    font-size:15px;
+    width: 100%;
+    color:#17161a;
+    background: transparent;
+    
+    }
+
+    &::placeholder{
+        background: white;
+        color: lightgray;
+    }
+
+  }
+ `
 
 
 /** 4 methodes pour ajouter du style à un composant.

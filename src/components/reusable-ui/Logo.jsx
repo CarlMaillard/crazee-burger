@@ -12,6 +12,7 @@ export default function Logo() {
 
 const LogoStyled = styled.div`
   border: 1px solid blue;
+  background: yellow;
   display: flex;
   align-items: center;
   transform: scale(2.5);
