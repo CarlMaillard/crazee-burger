@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { BsPersonCircle } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
-import Input from './Input';
+import  TextInput from '../../reusable-ui/TextInput';
 
 
 export default function LoginForm() {
@@ -31,7 +31,7 @@ export default function LoginForm() {
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous </h2>
-            <Input 
+            <TextInput 
             value={inputValue}
             onChange={handleChange} 
             placeholder={"Entrez votre prénom"} 
