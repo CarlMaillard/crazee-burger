@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { BsPersonCircle } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
+import Input from './Input';
 
 
 export default function LoginForm() {
@@ -22,7 +23,6 @@ export default function LoginForm() {
      setInputValue(event.target.value)
  }
 
-
   return (
         //affichage (render)
 
@@ -31,10 +31,13 @@ export default function LoginForm() {
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous </h2>
-            <div className="input-with-icon">
-                <BsPersonCircle className='icon'/>
-                <input value={inputValue}  type="text" placeholder='Entrez votre prénom' onChange={handleChange} required/>
-            </div>
+            <Input 
+            value={inputValue}
+            onChange={handleChange} 
+            placeholder={"Entrez votre prénom"} 
+            required
+            Icon={<BsPersonCircle className='icon'/>}
+            />
             <button className='button-with-icon'>
                 <span> Accéder à mon espace</span>
                 <FaChevronRight className='icon'/>
@@ -69,40 +72,7 @@ h2 {
     margin: 20px 10px 20px;
     font-size: 36px;
   }
-
-.input-with-icon {
-    background-color: white;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px; 
-    margin: 18px 0;
-
-    .icon{
-        width: 15px;
-        height: 15px;
-        margin-right: 10px;
-        color: #93a2b1;
-
-    }
-
-    input{
-    border: none;
-    font-size:15px;
-    width: 100%;
-    color:#17161a;
-    background: transparent;
-    
-    }
-
-    &::placeholder{
-        background: white;
-        color: lightgray;
-    }
-
-  }
-  
+   
 .button-with-icon {
     width:100%;
     height: 53px;
@@ -152,6 +122,7 @@ h2 {
     }
 }
  `
+
 
 /** 4 methodes pour ajouter du style à un composant.
  * 1. inline style
