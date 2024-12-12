@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { BsPersonCircle } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
 import  TextInput from '../../reusable-ui/TextInput';
+import PrimaryButton from '../../reusable-ui/PrimaryButton'
 
 
 export default function LoginForm() {
@@ -31,6 +32,7 @@ export default function LoginForm() {
             <h1>Bienvenue chez nous !</h1>
             <hr />
             <h2>Connectez-vous </h2>
+
             <TextInput 
             value={inputValue}
             onChange={handleChange} 
@@ -38,10 +40,12 @@ export default function LoginForm() {
             required
             Icon={<BsPersonCircle className='icon'/>}
             />
-            <button className='button-with-icon'>
-                <span> Accéder à mon espace</span>
-                <FaChevronRight className='icon'/>
-            </button>            
+
+            <PrimaryButton
+            Label="Accéder à mon espace"
+            Icon={<FaChevronRight className='icon'/>}
+            />
+                   
         </div>
     </LoginFormStyled>     
   )
@@ -72,56 +76,15 @@ h2 {
     margin: 20px 10px 20px;
     font-size: 36px;
   }
-   
-.button-with-icon {
-    width:100%;
-    height: 53px;
-    background-color: orange;
-    font-family: "Open sans", cursive;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    text-decoration: none;
-    line-height: 1px;
-    
-
-    
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 700;
-    color: white;
-    background-color: #ff9f1b;
-    border: 1px solid #ff9f1b;
-
-    
-    &:hover:not(:disabled) {
-        background-color: white;
-        color: #ff9f1b;
-        border: 1px solid #ff9f1b;
-        transition: all 200ms ease-out;
-    }
-
-    &:active {
-        color: white;
-        background-color: #ff9f1b;
-        border: 1px solid #ff9f1b; 
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-
-    .icon {
+  
+.icon {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 15px;
         margin-left: 15px;
-    }
 }
- `
+`
 
 
 /** 4 methodes pour ajouter du style à un composant.
