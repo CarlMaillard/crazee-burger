@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { theme } from '../../theme';
+
 
 export default function TextInput({value,onChange, Icon,  ...extraProps}) {
  console.log("rest:" ,extraProps)
@@ -12,32 +14,34 @@ export default function TextInput({value,onChange, Icon,  ...extraProps}) {
 
 const InputStyled = styled.div`  
     background-color: white;
-    border-radius: 5px;
-    display: flex;
+    border-radius: ${theme.borderRadius.round};
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 18px 24px; 
     margin: 18px 0;
 
     .icon{
+        font-size: ${theme.fonts.sizes.P0};
         width: 15px;
         height: 15px;
         margin-right: 10px;
-        color: #93a2b1;
+        color:${theme.colors.greySemiDark};
 
     }
 
     input{
-    border: none;
-    font-size:15px;
-    width: 100%;
-    color:#17161a;
-    background: transparent;
-    
+        border: none;
+        font-size:${theme.fonts.sizes.P0};
+        width: 100%;
+        color:${theme.colors.dark};
+        background: transparent;
+        
+        &::placeholder{
+            background: ${theme.colors.white};
+            color: ${theme.colors.greyMedium};
+        }
     }
 
-    &::placeholder{
-        background: white;
-        color: lightgray;
-    }
+     
 `
