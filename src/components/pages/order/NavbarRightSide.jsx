@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { theme } from "../../../theme";
 
 export default function NavbarRightSide({username}) {
   return (
@@ -10,11 +13,12 @@ export default function NavbarRightSide({username}) {
 
 const NavbarRightSidesStyled = styled.div`
   background: pink;
-    display: flex;
-    justify-content: space-between ;
-    align-items: center ;
+  height: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center ;
 
-    h1{
-        font-size: 32px;
-    }
+  h1{
+    font-size: ${theme.fonts.sizes.P2 };
+  }
 `;

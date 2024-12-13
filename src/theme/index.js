@@ -42,7 +42,7 @@ const colors = {
       P4: "36px",
       P5: "48px",
       P6: "60px",
-      p7: "115px",
+      P7: "115px",
     },
 
     weights:{
