@@ -1,24 +1,39 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../../../theme";
+import Profile from "./Profile.jsx";
 
-export default function NavbarRightSide({username}) {
+
+export default function NavbarRightSide({username, Icon}) {
   return (
     <NavbarRightSidesStyled>
-          <h1>Hey, {username} !</h1>
-          <Link to="/"><button>Se déconnecter</button></Link>
+      {/* <div className="admin-button">Admin bouton</div> */}
+      <Profile username={username}/>      
     </NavbarRightSidesStyled>
   )
 }
 
 const NavbarRightSidesStyled = styled.div`
-  background: pink;
   height: 100%;
   display: flex;
-  justify-content: space-between ;
   align-items: center ;
+  padding-right: 50px;
 
-  h1{
-    font-size: ${theme.fonts.sizes.P2 };
+  p{
+    color: black
   }
+
+  /* .admin-button{
+    background: lightblue;
+  } */
+
+  .profile {
+    background:  yellow;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .text-link{
+    font-size: 14px;
+    background-color: transparent;
+    height: 16px !important;
+  } */
 `;
