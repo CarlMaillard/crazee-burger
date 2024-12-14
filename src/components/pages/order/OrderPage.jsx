@@ -25,7 +25,7 @@ export default function OrderPage () {
 }
 
 const OrderPageStyled = styled.div`
-  background: orange;
+  background: ${theme.colors.primary};
   height: 100vh;
   width: 100vw;
   overflow: hidden;
