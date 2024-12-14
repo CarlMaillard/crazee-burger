@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Profile from "./Profile.jsx";
 
 
-export default function NavbarRightSide({username, Icon}) {
+export default function NavbarRightSide({username}) {
   return (
     <NavbarRightSidesStyled>
       {/* <div className="admin-button">Admin bouton</div> */}
