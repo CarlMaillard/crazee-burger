@@ -8,6 +8,5 @@ export default function Menu() {
 
 const MenuStyled = styled.div`
    background: turquoise;
-    /* padding: 20px ;
-      width: 100%; */
+    /* padding: 20px ;*/
 `;
