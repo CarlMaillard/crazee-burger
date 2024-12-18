@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import Logo from '../../../reusable-ui/Logo';
+import { theme } from '../../../../theme';
+import { refreshPage } from '../../../../utils/Window';
 import NavbarRightSide from './NavbarRightSide';
-import Logo from '../../reusable-ui/Logo';
-import { theme } from '../../../theme';
-import { refreshPage } from '../../../utils/Window';
 
 
 
