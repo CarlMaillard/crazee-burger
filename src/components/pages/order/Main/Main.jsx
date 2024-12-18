@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { theme } from "../../../../theme"
+import Menu from "./Menu"
 
 
 export default function Main() {
   return (
     <MainStyled>
       <div className="basket">Basket</div>
-      <div className="menu"> Menu
+      <Menu/>
         {/* <div class="grid-container">
           <div class="grid-item">
            <div className="food-image">
@@ -28,7 +29,6 @@ export default function Main() {
           <div class="grid-item">3</div>
           <div class="grid-item">4</div>
         </div> */}
-      </div>
     </MainStyled>
   )
 }
@@ -50,11 +50,7 @@ const MainStyled = styled.div`
       background: blue;
     }
 
-    .menu {
-      background: turquoise;
-      /* padding: 20px ;
-      width: 100%; */
-    }
+  
 
     /* .grid-container {
       background: black;
