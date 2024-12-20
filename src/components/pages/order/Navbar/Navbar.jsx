@@ -23,10 +23,13 @@ const NavbarStyled = styled.nav`
     display: flex;
     justify-content: space-between ;
     align-items: center ;
-    padding: 20px 20px;
+    padding: 0px 20px;
+
     border-top-right-radius: ${theme.borderRadius.extraRound};
     border-top-left-radius: ${theme.borderRadius.extraRound};
-  .logo-order-page {
+    border-bottom: 1px solid ${theme.colors.greyLight};
+
+  .logo-order-page{
     cursor: pointer;
   }
 `
