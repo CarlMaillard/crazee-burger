@@ -11,7 +11,22 @@ export default function Menu() {
   return (
     <MenuStyled className="menu">
        {menu.map((produit) => {
-            return  <div className="produit">{produit.title}</div>
+            return  (
+              <div className="produit">
+                <div className="image">
+                  <img src={produit.imageSource} alt={produit.title}></img>
+                </div>
+                
+                <div className="info-text">
+                  <div className="title">{produit.title}</div>
+                  <div className="description">
+                    <div className="price">{produit.price}</div>
+                    <button className="add-button">Ajouter</button>
+                  </div>
+                </div>
+                
+              </div>
+            )
           }
           //   (
           //   <Card
@@ -69,10 +84,17 @@ const MenuStyled = styled.div`
       padding-bottom: 14px;
       box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
 
-      .food-image{
-        background: blue;
-        height: 100%;
-        background-blend-mode: darken;
+      .image{
+        border: 1px solid fuchsia;
+        width: 100px;
+        height: auto;
+        img {
+          width: 100%;
+          height: 100%;
+          /* background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; */
+        }
       }
 
       .food-name {
