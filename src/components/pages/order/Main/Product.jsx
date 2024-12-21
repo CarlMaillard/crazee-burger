@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
+import PrimaryButton from "../../../reusable-ui/PrimaryButton"
 
-export default function Product({title, imageSource, price}) {
+export default function Product({title, imageSource, price }) {
   return (
    <ProductStyled className="produit">
         <div className="image">
@@ -10,8 +11,10 @@ export default function Product({title, imageSource, price}) {
         <div className="info-text">
           <div className="title">{title}</div>
           <div className="description">
-            <div className="price">{price}</div>
-            <button className="add-button">Ajouter</button>
+            <div className="left-description">{price}</div>
+            <div className="right-description"> 
+              <PrimaryButton className="primary-button" Label={"Ajouter"}>Ajouter</PrimaryButton>
+            </div>
           </div>
         </div>
     </ProductStyled> 
@@ -27,44 +30,76 @@ const ProductStyled = styled.div`
     grid-template-rows: 65% 1fr;
     grid-row-gap: 10px;
     justify-items: center;
-
-
+    box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
     border-radius: ${theme.borderRadius.extraRound};
-    margin: auto;
     padding: 20px;
     padding-bottom: 10px;
-    box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-    
-    .image{
-        margin-top: 30px;
-        border: 1px solid fuchsia;
-        width: 100%;
-        height: auto;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-      }
+    margin: auto;
+   
+  
+    .image {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 
     .info-text {
+      display: grid;
       width: 100%;
-      justify-items: left;
-    }
+      grid-template-rows: 30% 70%;
+      padding: 5px;
 
-    .title {
-      border: 1px solid black;
-    }
-
-    .description{
-        border: 1px solid red;
+      .title {
+        margin: auto 0;
+        font-size: ${theme.fonts.sizes.P4};
+        position: relative;
+        bottom: 10px;
+        font-weight: ${theme.fonts.weights.bold};
+        color: ${theme.colors.dark};
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
         width: 100%;
+        text-overflow: ellipsis;
+        font-family: "Amatic SC", cursive;
+    }
+
+    .description {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .left-description {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        justify-items: left;
+        font-weight: ${theme.fonts.weights.medium};
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: ${theme.fonts.weights.medium};
+        color: ${theme.colors.primary};
+      }
+
+      .right-description {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: ${theme.fonts.sizes.P1};
+
+        .primary-button {
+          font-size: ${theme.fonts.sizes.XS};
+          cursor: pointer;
+          padding: 12px;
+        }
+      }
+    }
     }
 `;
