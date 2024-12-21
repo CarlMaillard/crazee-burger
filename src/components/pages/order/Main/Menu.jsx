@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../../theme";
 import { useState } from "react";
 import {fakeMenu2} from "../../../../fakeData/fakeMenu"
+import Product from "./Product";
 
 
 export default function Menu() {
@@ -12,49 +13,14 @@ export default function Menu() {
     <MenuStyled className="menu">
        {menu.map((produit) => {
             return  (
-              <div className="produit">
-                <div className="image">
-                  <img src={produit.imageSource} alt={produit.title}></img>
-                </div>
-                
-                <div className="info-text">
-                  <div className="title">{produit.title}</div>
-                  <div className="description">
-                    <div className="price">{produit.price}</div>
-                    <button className="add-button">Ajouter</button>
-                  </div>
-                </div>
-                
-              </div>
+              <Product 
+              title={produit.title}
+              imageSource={produit.imageSource}
+              price={produit.price}
+              />
             )
           }
-          //   (
-          //   <Card
-          //   burgerName={produit.title}
-          //   key={produit.id}
-          //   />
-          // )
-        )}
-          {/* <div className="grid-item">
-           <div className="food-image">
-              food-image
-           </div>
-           <div className="food-name">
-            <p> 
-              {burgerName[0]}
-            </p>
-           </div>
-           <div className="item-bottom-block">
-             <div className="price">
-                price
-             </div>
-             <div>
-              button
-             </div>
-           </div>
-          </div> */}
-          // 
-        
+        )}        
     </MenuStyled>
   )
 }
@@ -91,6 +57,7 @@ const MenuStyled = styled.div`
         img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
           /* background-size: cover;
           background-position: center;
           background-repeat: no-repeat; */
