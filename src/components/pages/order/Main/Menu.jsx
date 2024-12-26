@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { theme } from "../../../../theme";
 import { useState } from "react";
 import {fakeMenu2} from "../../../../fakeData/fakeMenu"
-import Product from "./Product";
+import Card from "../../../reusable-ui/Card";
+import {formatPrice} from "../../../../utils/maths"
+
 
 
 export default function Menu() {
@@ -11,10 +13,13 @@ export default function Menu() {
 
   return (
     <MenuStyled className="menu">
-       {menu.map((produit) => {
+       {menu.map(({id, title, imageSource, price}) => {
             return  (
-              // <Product title={produit.title} imageSource={produit.imageSource} price={produit.price}/>
-              <Product {...produit} />
+              <Card 
+                key={id} 
+                title={title} 
+                imageSource={imageSource} 
+                leftDescription={formatPrice(price)}/>
             )
           }
         )}        
@@ -30,5 +35,4 @@ const MenuStyled = styled.div`
    grid-row-gap: 60px;
    padding: 50px 50px 150px;
    justify-items: center;
-
 `;
