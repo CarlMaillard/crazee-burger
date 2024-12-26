@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import PrimaryButton from "../../../reusable-ui/PrimaryButton"
+import {formatPrice} from "../../../../utils/maths"
 
 export default function Product({title, imageSource, price }) {
   return (
@@ -11,7 +12,7 @@ export default function Product({title, imageSource, price }) {
         <div className="info-text">
           <div className="title">{title}</div>
           <div className="description">
-            <div className="left-description">{price}</div>
+            <div className="left-description">{formatPrice(price) }</div>
             <div className="right-description"> 
               <PrimaryButton className="primary-button" Label={"Ajouter"}>Ajouter</PrimaryButton>
             </div>
@@ -33,7 +34,7 @@ const ProductStyled = styled.div`
     box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
     border-radius: ${theme.borderRadius.extraRound};
     padding: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin: auto;
    
   
