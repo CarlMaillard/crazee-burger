@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components';
-import Navbar from './Navbar';
-import Main from './Main';
 import { theme } from '../../../theme';
+import Navbar from './Navbar/Navbar';
+import Main from './Main/Main'
 
 
 export default function OrderPage () {
@@ -26,12 +26,13 @@ export default function OrderPage () {
 
 const OrderPageStyled = styled.div`
   background: ${theme.colors.primary};
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: auto;   */
   
 
   .container{
@@ -41,8 +42,6 @@ const OrderPageStyled = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: ${theme.borderRadius.extraRound};
-   
-   
    }
 
    
