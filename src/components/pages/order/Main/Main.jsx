@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { theme } from "../../../../theme"
 import Menu from "./Menu"
+import Admin from "../Main/Admin/Admin"
 
 
 export default function Main() {
@@ -9,7 +10,7 @@ export default function Main() {
       {/* <div className="basket">Basket</div> */}
       <div className="menu-and-admin">
         <Menu />
-        <div className="admin">Admin</div>
+        <Admin/>
       </div>
       </MainStyled>
   )
@@ -39,16 +40,6 @@ const MainStyled = styled.div`
       display: grid;
       border-bottom-right-radius: ${theme.borderRadius.extraRound};
       border-bottom-left-radius: ${theme.borderRadius.extraRound};
-
-      .admin{
-      background: red;
-      height: 250px;
-      position: absolute;
-      bottom: 0;
-      left:0px;
-      right: 0px;
-      }
-      
     }
       
 
