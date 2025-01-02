@@ -11,7 +11,7 @@ export default function Main() {
         <Menu />
         <div className="admin">Admin</div>
       </div>
-g    </MainStyled>
+      </MainStyled>
   )
 }
 
@@ -45,8 +45,8 @@ const MainStyled = styled.div`
       height: 250px;
       position: absolute;
       bottom: 0;
-      left:0;
-      right: 0;
+      left:0px;
+      right: 0px;
       }
       
     }

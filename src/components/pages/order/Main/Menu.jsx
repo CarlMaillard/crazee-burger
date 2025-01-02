@@ -30,6 +30,7 @@ export default function Menu() {
 const MenuStyled = styled.div`
   border: 5px solid blue;
    background: ${theme.colors.background_white};
+   /* height:100%; */
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
    grid-row-gap: 60px;
