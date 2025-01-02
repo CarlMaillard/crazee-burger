@@ -36,13 +36,10 @@ const OrderPageStyled = styled.div`
   
 
   .container{
-    height: 95vh;
     margin: auto;
     width: 1400px;
     display: flex;
     flex-direction: column;
     border-radius: ${theme.borderRadius.extraRound};
    }
-
-   
 `
