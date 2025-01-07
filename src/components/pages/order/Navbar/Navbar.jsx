@@ -7,12 +7,12 @@ import NavbarRightSide from './NavbarRightSide';
 
 
 
-export default function Navbar({username}) {
+export default function Navbar() {
   
   return (
     <NavbarStyled>
       <Logo className="logo-order-page" onClick={refreshPage}/>
-      <NavbarRightSide username={username}/>
+      <NavbarRightSide/>
     </NavbarStyled>
   )
 }
