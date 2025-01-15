@@ -1,14 +1,28 @@
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
+import { IoChevronDownOutline } from "react-icons/io5";
+import { GoPlus } from "react-icons/go";
+import { FaPen } from "react-icons/fa";
+import Tab from "../../../../reusable-ui/Tab";
+import { FiChevronDown , FiChevronUp} from "react-icons/fi";
+
+
+
 
 
 export default function AdminTabs() {
   return (
-    <AdminTabsStyled>AdminTabs</AdminTabsStyled>
+    <AdminTabsStyled>
+        <Tab
+        Icon={<FiChevronDown/>}
+        />
+    </AdminTabsStyled>
+
   )
 }
 
 const AdminTabsStyled = styled.div`
-  border: 1px solid red;
-  color: ${theme.colors.dark}
+
+  color: ${theme.colors.dark};
+  display: flex;
 `;

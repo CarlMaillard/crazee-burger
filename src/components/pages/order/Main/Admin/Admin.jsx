@@ -10,7 +10,6 @@ export default function Admin() {
     <AdminStyled>
       <AdminTabs/>
       <AdminPanel/>
-
     </AdminStyled>  
  )
 }
