@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function Tab({Icon}) {
+export default function Tab({Icon, onClick, className}) {
+
   return (
-    <TabStyled>
-        <div className="icon">{Icon && Icon}</div>
+    <TabStyled onClick={onClick} className={className}> 
+        <div className="icon">{Icon}</div>
     </TabStyled>
   )
 }
@@ -35,7 +36,7 @@ const TabStyled = styled.button`
    
     border-width: 1px 1px 2px 1px;
     border-style: solid;
-    border-color: ${theme.colors.greyLight};;
+    border-color: ${theme.colors.greyLight};
 
     //border-radius
     border-radius: ${theme.borderRadius.round};
@@ -44,6 +45,7 @@ const TabStyled = styled.button`
     
     &:hover{
         border-bottom: 2px solid ${theme.colors.white} ;
+        border-color: ${theme.colors.white};
     }
 
     .icon{
