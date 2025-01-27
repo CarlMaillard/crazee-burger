@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useContext, useState } from 'react'
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from './Navbar/Navbar';
@@ -11,6 +11,7 @@ export default function OrderPage () {
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [isEditSelected ,setIsEditSelected] = useState(true)
     const [isAddSelected, setIsAddSelected] = useState(false)
+    const [currentTabSelected, setCurrentTabSelected] = useState("add")
 
     //comportements 
     const orderContextValue = {
@@ -22,6 +23,8 @@ export default function OrderPage () {
       setIsEditSelected,
       isAddSelected,
       setIsAddSelected,
+      currentTabSelected,
+      setCurrentTabSelected
     }
      
     //affichage (render)
