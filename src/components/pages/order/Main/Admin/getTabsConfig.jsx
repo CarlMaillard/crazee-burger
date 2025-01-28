@@ -1,16 +1,7 @@
 import { AiOutlinePlus} from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 
-export const getTabsConfig = (currentTabSelected) => [
-
-    // {
-    //   id:0,
-    //   index:"chevronUpDown",
-    //   label: "",
-    //   Icon: isCollapsed ? <FiChevronUp/> : <FiChevronDown/>,
-    //   onClick: () => setIsCollapsed(!isCollapsed),
-    //   className: isCollapsed ? "is-active" : ""
-    // },
+export const getTabsConfig = () => [
 
     {
       index:"add",
@@ -23,6 +14,7 @@ export const getTabsConfig = (currentTabSelected) => [
       label: "Modifier un produit",
       Icon: <MdModeEditOutline/>,
     }
+    
   ]
 
   export  const getTabSelected = (tabs,currentTabSelected) => tabs.find((tab) => tab.index === currentTabSelected);
