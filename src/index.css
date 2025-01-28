@@ -3,6 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
+  box-sizing: border-box;
+
 
 
   color-scheme: light dark;
@@ -18,7 +20,7 @@
 
 /* .amatic-sc-regular {
   font-family: "Amatic SC", serif;
-  font-weight: 400;
+  font-weight: 400; 
   font-style: normal;
 }
 
@@ -64,10 +66,11 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
+
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -1,25 +1,43 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import { React, useContext, useState } from 'react'
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from './Navbar/Navbar';
-import Main from './Main/Main'
-
+import Main from './Main/Main';
+import OrderContext from '../../../context/OrderContext';
 
 export default function OrderPage () {
     //state 
-    const {username} = useParams();
-    
-    //comportements
-  
+    const [isModeAdmin, setIsModeAdmin] = useState(true);
+    const [isCollapsed, setIsCollapsed] = useState(false)
+    const [isEditSelected ,setIsEditSelected] = useState(true)
+    const [isAddSelected, setIsAddSelected] = useState(false)
+    const [currentTabSelected, setCurrentTabSelected] = useState("add")
+
+    //comportements 
+    const orderContextValue = {
+      isModeAdmin,
+      setIsModeAdmin,
+      isCollapsed,
+      setIsCollapsed,
+      isEditSelected,
+      setIsEditSelected,
+      isAddSelected,
+      setIsAddSelected,
+      currentTabSelected,
+      setCurrentTabSelected
+    }
+     
     //affichage (render)
-  return    (
-    <OrderPageStyled>
-        <div className='container'>
-          <Navbar username={username}/>
-          <Main/>
-        </div>
-    </OrderPageStyled>
+  return (
+    <OrderContext.Provider value={orderContextValue}>
+      <OrderPageStyled>
+          <div className='container'>
+            <Navbar />
+            <Main/>
+          </div>
+      </OrderPageStyled>
+    </OrderContext.Provider>
+    
     
   )          
 }
@@ -36,13 +54,10 @@ const OrderPageStyled = styled.div`
   
 
   .container{
-    height: 95vh;
     margin: auto;
     width: 1400px;
     display: flex;
     flex-direction: column;
     border-radius: ${theme.borderRadius.extraRound};
    }
-
-   
 `

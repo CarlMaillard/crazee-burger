@@ -22,7 +22,7 @@ const InputStyled = styled.div`
     margin: 18px 0;
 
     .icon{
-        font-size: ${theme.fonts.sizes.P0};
+        font-size: ${theme.fonts.sizes.SM};
         width: 15px;
         height: 15px;
         margin-right: 10px;
@@ -32,7 +32,7 @@ const InputStyled = styled.div`
 
     input{
         border: none;
-        font-size:${theme.fonts.sizes.P0};
+        font-size:${theme.fonts.sizes.SM};
         width: 100%;
         color:${theme.colors.dark};
         background: transparent;
