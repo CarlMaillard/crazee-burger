@@ -1,4 +1,4 @@
-import styled from "styled-components";
+ import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown , FiChevronUp} from "react-icons/fi";
@@ -37,7 +37,7 @@ export default function AdminTabs() {
             label= {tab.label}
             Icon={tab.Icon}
             onClick= {() => selectTab(tab.index)}
-            className={tab.className}
+            className={currentTabSelected === tab.index ? "is-active" : ""}
             />
           ))}
 
