@@ -1,21 +1,24 @@
 import styled from "styled-components";
-import {theme} from "../../../../../theme/index"
 import { useContext } from "react";
-import OrderContext from "../../../../../context/OrderContext";
-import { getTabsConfig, getTabSelected } from "./getTabsConfig";
+import { getTabsConfig, getTabSelected } from "../getTabsConfig";
+import { theme } from "../../../../../../theme";
+import OrderContext from "../../../../../../context/OrderContext";
+
 
 
 export default function AdminPanel() {
 
   const { currentTabSelected} = useContext(OrderContext)
 
+
+
   const tabs = getTabsConfig(currentTabSelected)
   const tabSelected = getTabSelected(tabs,currentTabSelected);
 
   return (
      <AdminPanelStyled className="panel-admin" >
-      {currentTabSelected === tabSelected.index && tabSelected.label }
-      </AdminPanelStyled>
+      {currentTabSelected === tabSelected.index && tabSelected.Content }
+    </AdminPanelStyled>
   )
 }
 
@@ -27,4 +30,8 @@ const AdminPanelStyled = styled.div`
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
   box-shadow: ${theme.shadows.subtle};
+
+  .input-ajout{
+    background-color: ${theme.colors.background_white};
+  }
 `;
