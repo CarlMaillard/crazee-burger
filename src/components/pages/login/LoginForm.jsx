@@ -11,7 +11,7 @@ import { theme } from '../../../theme/index';
 
 export default function LoginForm() {
  //state
- const [inputValue, setInputValue] = useState(""); 
+ const [inputValue, setInputValue] = useState("Carlito"); 
  const navigate = useNavigate();   
 
  //comportements
