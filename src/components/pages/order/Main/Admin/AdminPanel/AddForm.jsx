@@ -23,7 +23,7 @@ export default function AddForm() {
   <AddFormStyled onSubmit={handleSubmit}> 
     <div className="image-preview" >image</div>
     <div className="input-fields">
-      <input type="text" placeholder="Nom" value /> 
+      <input type="text" placeholder="Nom" /> 
       <input type="text" placeholder="image url" />
       <input type="text" placeholder="prix" />
     </div>
