@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
-import { useState } from "react";
-import {fakeMenu} from "../../../../fakeData/fakeMenu"
 import Card from "../../../reusable-ui/Card";
 import {formatPrice} from "../../../../utils/maths"
-
+import { useContext } from "react";
+import OrderContext from "../../../../context/OrderContext";
 
 
 export default function Menu() {
 
-  const [menu, setMenu] = useState(fakeMenu.LARGE)
+  const { menu } = useContext(OrderContext)
 
   return (
     <MenuStyled className="menu">
@@ -38,4 +37,11 @@ const MenuStyled = styled.div`
    justify-items: center;
    box-shadow: 0px 8px 20px 8px rgba(0,0,0,0.2) inset;
    overflow-y: scroll;
+
+      
+   .ajouter-produit{
+    color: white;
+    width: 100px;
+   }
+   
 `;
