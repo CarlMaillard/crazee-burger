@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import OrderContext from "../../../../../../context/OrderContext";
 
@@ -6,26 +6,43 @@ export default function AddForm() {
 
   const {handleAddProduct} = useContext(OrderContext)
 
+  const [title, setTitle] = useState("")
+  const [imageSource, setImageSource] = useState("")
+  const [price, setPrice] = useState(0)
+
+
   const newProduct =  {
    id: new Date().getTime(),
-   imageSource: "/images/burger-bacon-egg.png",
-   title: "Carlitoooo BBQ",
-   price: 8,
+   imageSource: imageSource,
+   title: title,
+   price: price
  }
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     handleAddProduct(newProduct)
+    
    }
 
-  
+  const handleTitle = (event) => { 
+    setTitle(event.target.value)
+  }
+
+  const handleImageSource = (event) => { 
+    setImageSource(event.target.value)
+  }
+  const handlePrice = (event) => { 
+    setPrice(event.target.value)
+  }
+
   return(
   <AddFormStyled onSubmit={handleSubmit}> 
     <div className="image-preview" >image</div>
     <div className="input-fields">
-      <input type="text" placeholder="Nom" /> 
-      <input type="text" placeholder="image url" />
-      <input type="text" placeholder="prix" />
+      <input value={title} type="text" placeholder="Nom" onChange={handleTitle} /> 
+      <input value={imageSource} type="text" placeholder="image url" onChange={handleImageSource} />
+      <input value={price ? price : ""} type="text" placeholder="prix" onChange={handlePrice} />
     </div>
     <button className="submit-button" >submit-button</button>
   </AddFormStyled>
