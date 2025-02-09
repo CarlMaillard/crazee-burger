@@ -35,7 +35,17 @@ export default function AddForm() {
 
   return(
   <AddFormStyled onSubmit={handleSubmit}> 
-    <div className="image-preview" >Aucune image</div>
+   <div className="image-preview" >
+   {
+    newProduct.imageSource ? (
+      <img src={newProduct.imageSource} alt={newProduct.title} />
+    ): (
+      <div >Aucune image</div>
+    )
+  }
+    </div>
+  
+   
     <div className="input-fields">
       <input name="title" value={newProduct.title} type="text" placeholder="Nom" onChange={handleChange} /> 
       <input name="imageSource" value={newProduct.imageSource } className={newProduct.imageSource === null ? "coming-soon" : "" } type="text" placeholder="Image URL" onChange={handleChange} />
@@ -58,9 +68,18 @@ width: 70%;
  
 
 .image-preview{
-  background: red;
   grid-area: 1 / 1 / 4 / 2;
-  /* background-image: url("/images/coming-soon.png"); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+ }
+
 }
 
 .coming-soon{
