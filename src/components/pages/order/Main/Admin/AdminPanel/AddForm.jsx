@@ -6,7 +6,7 @@ const EMPTY_PRODUCT = {
    id:"",
    title: "",
    imageSource: "",
-   price: 1,
+   price: 0,
 }
 
 export default function AddForm() {
@@ -15,19 +15,20 @@ export default function AddForm() {
 
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
 
+
   
     const handleSubmit = (event) => {
       event.preventDefault();
+
       const newProductToAdd = {
         ...newProduct,
         id: crypto.randomUUID(),
      }
       handleAddProduct(newProductToAdd)
-      console.log("suubmit:", newProductToAdd)
     }
 
     const handleChange = (event) => {
-      console.log("event target:", event.target)
+   
       const { name, value } = event.target
       setNewProduct({ ...newProduct, [name]: value })
     }
@@ -37,9 +38,10 @@ export default function AddForm() {
     <div className="image-preview" >Aucune image</div>
     <div className="input-fields">
       <input name="title" value={newProduct.title} type="text" placeholder="Nom" onChange={handleChange} /> 
-      <input name="imageSource" value={newProduct.imageSource} type="text" placeholder="Image URL" onChange={handleChange} />
+      <input name="imageSource" value={newProduct.imageSource } className={newProduct.imageSource === null ? "coming-soon" : "" } type="text" placeholder="Image URL" onChange={handleChange} />
       <input name="price" value={newProduct.price ? newProduct.price : ""} type="text" placeholder="Prix" onChange={handleChange} />
     </div>
+    
     <button className="submit-button" >submit-button</button>
   </AddFormStyled>
   )
@@ -58,6 +60,11 @@ width: 70%;
 .image-preview{
   background: red;
   grid-area: 1 / 1 / 4 / 2;
+  /* background-image: url("/images/coming-soon.png"); */
+}
+
+.coming-soon{
+  background-image: url("/images/coming-soon.png")
 }
 
 .input-fields{
