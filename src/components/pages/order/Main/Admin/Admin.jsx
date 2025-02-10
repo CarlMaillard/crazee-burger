@@ -25,6 +25,7 @@ const AdminStyled = styled.div`
       /* display: flex;
       flex-direction: column; */
       position: absolute;
+      z-index: 2;
       bottom: 0;
       left:0px;
       right: 0px;
