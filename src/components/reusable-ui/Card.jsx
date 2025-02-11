@@ -5,14 +5,14 @@ import {TiDelete} from "react-icons/ti"
 // import { useContext } from "react";
 // import OrderContext from "../../context/OrderContext";
 
-export default function Card({title, imageSource, leftDescription, hasDeleteButton }) {
+export default function Card({title, imageSource, leftDescription, hasDeleteButton, onDelete }) {
 
   // const{isModeAdmin, setIsModeAdmin} = useContext(OrderContext)
 
 
   return (
-   <CardStyled className="produit">
-       {hasDeleteButton &&  <button className="delete-button" aria-label="delete-button">
+   <CardStyled className="produit" >
+       {hasDeleteButton &&  <button className="delete-button" aria-label="delete-button" onClick={onDelete}>
          <TiDelete className="icon"/>
         </button>} 
         
