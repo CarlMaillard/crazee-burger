@@ -9,7 +9,7 @@ import { fakeMenu } from '../../../fakeData/fakeMenu';
 export default function OrderPage () {
     //state 
     const [isModeAdmin, setIsModeAdmin] = useState(true);
-    const [isCollapsed, setIsCollapsed] = useState(false)
+    const [isCollapsed, setIsCollapsed] = useState(true)
     const [isEditSelected ,setIsEditSelected] = useState(true)
     const [isAddSelected, setIsAddSelected] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")

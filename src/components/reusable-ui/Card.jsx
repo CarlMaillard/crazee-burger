@@ -2,13 +2,20 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 import PrimaryButton from "./PrimaryButton"
 import {TiDelete} from "react-icons/ti"
+// import { useContext } from "react";
+// import OrderContext from "../../context/OrderContext";
 
-export default function Card({title, imageSource, leftDescription }) {
+export default function Card({title, imageSource, leftDescription, hasDeleteButton }) {
+
+  // const{isModeAdmin, setIsModeAdmin} = useContext(OrderContext)
+
+
   return (
    <CardStyled className="produit">
-        <button className="delete-button" aria-label="delete-button">
-          <TiDelete className="icon"/>
-        </button>
+       {hasDeleteButton &&  <button className="delete-button" aria-label="delete-button">
+         <TiDelete className="icon"/>
+        </button>} 
+        
         <div className="image">
             <img src={imageSource} alt={title}></img>
         </div>
