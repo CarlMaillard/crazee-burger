@@ -9,7 +9,13 @@ const IMG_BY_DEFAULT = "/images/coming-soon.png";
 
 export default function Menu() {
 
-  const { menu, isModeAdmin, handleDelete } = useContext(OrderContext)
+  const { menu, isModeAdmin, handleDelete, resetMenu } = useContext(OrderContext)
+
+  if(menu.length === 0)return <div>
+    <span>Pas de produits</span>
+    <button onClick={resetMenu}>Générer les produits</button>
+  </div> 
+  
 
   return (
     <MenuStyled className="menu">
@@ -31,6 +37,7 @@ export default function Menu() {
 }
 
 const MenuStyled = styled.div`
+
   border: 5px solid blue;
    background: ${theme.colors.background_white};
    /* height:100%; */
@@ -42,6 +49,10 @@ const MenuStyled = styled.div`
    box-shadow: 0px 8px 20px 8px rgba(0,0,0,0.2) inset;
    overflow-y: scroll;
 
+   h1{
+    color: red;
+    font-size: 100px;
+   }
       
    .ajouter-produit{
     color: white;
