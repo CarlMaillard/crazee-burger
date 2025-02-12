@@ -60,7 +60,7 @@ max-width: 500px;
 min-width: 400px;
 margin: Opx auto;
 padding: 40px ${theme.spacing.lg};
-border-radius: ${theme.borderRadius.roundg};
+border-radius: ${theme.borderRadius.round};
 font-family: "Amatic SC", cursive;
 
 hr{

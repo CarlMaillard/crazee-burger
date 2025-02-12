@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { theme } from "../../../../theme";
-import Card from "../../../reusable-ui/Card";
-import {formatPrice} from "../../../../utils/maths"
+import { theme } from "../../../../../theme";
+import Card from "../../../../reusable-ui/Card";
+import {formatPrice} from "../../../../../utils/maths"
 import { useContext } from "react";
-import OrderContext from "../../../../context/OrderContext";
+import OrderContext from "../../../../../context/OrderContext";
+import EmptyMenuAdmin from "./EmptyMenuAdmin";
+import EmptyMenuClient from "./EmptyMenuClient";
 
 const IMG_BY_DEFAULT = "/images/coming-soon.png";
 
@@ -11,10 +13,11 @@ export default function Menu() {
 
   const { menu, isModeAdmin, handleDelete, resetMenu } = useContext(OrderContext)
 
-  if(menu.length === 0)return <div>
-    <span>Pas de produits</span>
-    <button onClick={resetMenu}>Générer les produits</button>
-  </div> 
+  if(menu.length === 0) {
+
+    if(!isModeAdmin)  return <EmptyMenuClient />
+    return  <EmptyMenuAdmin onReset={resetMenu} />
+  }
   
 
   return (

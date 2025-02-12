@@ -11,7 +11,7 @@ export default function PrimaryButton({Icon, Label}) {
 
 const PrimaryButtonStyled = styled.button`
     
-    width:100%;
+    width:auto;
     height: 53px;
     background-color: orange;
     font-family: "Open sans", cursive;
