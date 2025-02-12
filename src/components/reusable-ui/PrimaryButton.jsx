@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 export default function PrimaryButton({Icon, Label}) {
   return (
     <PrimaryButtonStyled>
                 <span>{Label} </span>
-                {Icon && Icon}
+                <div className='icon'>{Icon && Icon}</div>
     </PrimaryButtonStyled>      
   )
 }
 
 const PrimaryButtonStyled = styled.button`
     
-    width:auto;
+    width:100%;
     height: 53px;
     background-color: orange;
     font-family: "Open sans", cursive;
@@ -49,6 +50,12 @@ const PrimaryButtonStyled = styled.button`
         opacity: 0.6;
         cursor: not-allowed;
     }
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
 
+    }
   
 `

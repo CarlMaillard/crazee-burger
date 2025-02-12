@@ -40,12 +40,12 @@ export default function LoginForm() {
             onChange={handleChange} 
             placeholder={"Entrez votre prénom"} 
             required
-            Icon={<BsPersonCircle className='icon'/>}
+            Icon={<BsPersonCircle />}
             />
 
             <PrimaryButton
             Label="Accéder à mon espace"
-            Icon={<FaChevronRight className='icon'/>}
+            Icon={<FaChevronRight />}
             />
                    
         </div>
@@ -78,14 +78,7 @@ h2 {
     margin: 20px 10px 20px;
     font-size: ${theme.fonts.sizes.P4};
   }
-  
-.icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: ${theme.fonts.sizes.SM};
-        margin-left: 10px;
-}
+
 `
 
 
