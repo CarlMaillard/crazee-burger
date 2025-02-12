@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import OrderContext from "../../../../../../context/OrderContext";
 import {FiCheck} from "react-icons/fi"
+import { theme } from "../../../../../../theme";
 
 const EMPTY_PRODUCT = {
    id:"",
@@ -53,7 +54,7 @@ export default function AddForm() {
     newProduct.imageSource ? (
       <img src={newProduct.imageSource} alt={newProduct.title} />
     ): (
-      <div >Aucune image</div>
+      <div className="empty-image">Aucune image</div>
     )
   }
     </div>
@@ -85,6 +86,8 @@ padding: 30px 5%;
 display: grid;
 grid-template-columns:  1fr 3fr ;
 grid-template-rows:  repeat(4, 1fr);
+grid-row-gap: 8px;
+grid-column-gap: 20px;
 height: 100%;
 width: 70%;
  
@@ -100,6 +103,18 @@ width: 70%;
   height: 100%;
   object-fit: contain;
   object-position: center;
+ }
+
+ .empty-image{
+  border: 1px solid  ${theme.colors.greyLight};
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  color: ${theme.colors.greyDark};
+  border-radius:  ${theme.borderRadius.round};
  }
 
 }
