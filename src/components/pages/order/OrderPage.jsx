@@ -5,6 +5,7 @@ import Navbar from './Navbar/Navbar';
 import Main from './Main/Main';
 import OrderContext from '../../../context/OrderContext';
 import { fakeMenu } from '../../../fakeData/fakeMenu';
+import { EMPTY_PRODUCT } from './Main/Admin/AdminPanel/AddForm';
 
 export default function OrderPage () {
     //state 
@@ -13,7 +14,8 @@ export default function OrderPage () {
     const [isEditSelected ,setIsEditSelected] = useState(true)
     const [isAddSelected, setIsAddSelected] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
-    const [menu, setMenu] = useState(fakeMenu.SMALL)
+    const [menu, setMenu] = useState(fakeMenu.LARGE)
+    const [ newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
 
     
     //comportements 
@@ -53,7 +55,9 @@ export default function OrderPage () {
       menu,
       handleAddProduct,
       handleDelete,
-      resetMenu
+      resetMenu,
+      newProduct,
+      setNewProduct
     }
      
 
