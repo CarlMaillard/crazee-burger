@@ -8,6 +8,7 @@ import {MdOutlineEuro} from "react-icons/md";
 import { theme } from "../../../../../../theme";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import Button from "../../../../../reusable-ui/Button";
+import ImagePreview from "./ImagePreview";
 
 export const EMPTY_PRODUCT = {
    id:"",
@@ -52,17 +53,7 @@ export default function AddForm() {
 
   return(
   <AddFormStyled onSubmit={handleSubmit}> 
-   <div className="image-preview" >
-   {
-    newProduct.imageSource ? (
-      <img src={newProduct.imageSource} alt={newProduct.title} />
-    ): (
-      <div className="empty-image">Aucune image</div>
-    )
-  }
-    </div>
-  
-   
+  <ImagePreview imageSource={newProduct.imageSource} tile={newProduct.title} />
     <div className="input-fields">
       <TextInput name="title" value={newProduct.title} type="text" placeholder="Nom du produit (ex: Super Burger)" onChange={handleChange} Icon={<FaHamburger/> } version="minimalist" /> 
       <TextInput name="imageSource" value={newProduct.imageSource } className={newProduct.imageSource === null ? "coming-soon" : "" } type="text" placeholder="Lien URL d'une image (ex: https://la-photo-du-burger.png)" onChange={handleChange} Icon={<BsFillCameraFill/>} version="minimalist" />
@@ -96,34 +87,6 @@ grid-column-gap: 20px;
 height: auto;
 width: 70%;
  
-
-.image-preview{
-  grid-area: 1 / 1 / 4 / 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
- img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
- }
-
- .empty-image{
-  border: 1px solid  ${theme.colors.greyLight};
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.5;
-  color: ${theme.colors.greyDark};
-  border-radius:  ${theme.borderRadius.round};
- }
-
-}
-
 .coming-soon{
   background-image: url("/images/coming-soon.png")
 }
