@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
-import PrimaryButton from "./PrimaryButton"
+import Button from "./Button"
 import {TiDelete} from "react-icons/ti"
 // import { useContext } from "react";
 // import OrderContext from "../../context/OrderContext";
@@ -24,7 +24,7 @@ export default function Card({title, imageSource, leftDescription, hasDeleteButt
           <div className="description">
             <div className="left-description">{leftDescription}</div>
             <div className="right-description"> 
-              <PrimaryButton className="primary-button" Label={"Ajouter"}>Ajouter</PrimaryButton>
+              <Button className="primary-button" Label={"Ajouter"} version="primary">Ajouter</Button>
             </div>
           </div>
         </div>

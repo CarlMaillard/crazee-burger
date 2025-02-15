@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PrimaryButton from "../../../../reusable-ui/PrimaryButton";
 import { theme } from "../../../../../theme";
 
 export default function EmptyMenuAdmin({onReset}) {
@@ -10,7 +9,7 @@ export default function EmptyMenuAdmin({onReset}) {
     <br/>
     <span className="bottom-title">Cliquez ci-dessous pour le réinitialiser</span>
     <br/>
-    {/* <PrimaryButton onClick={onReset} Label="Générer de nouveaux produits" /> */}
+    {/* <ButtononClick={onReset} Label="Générer de nouveaux produits" /> */}
     <button onClick={onReset}>CLIQUEZ ICI POUR LE RÉINITIALISER</button>
   </EmptyMenuAdmintStyled> 
   

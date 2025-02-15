@@ -20,6 +20,13 @@ export default function TextInput({
 }
 
 const TextInTextputStyled = styled.div`  
+/* 
+${(props) => {
+    if(props.version === "normal") return extraStyleNormal;
+    if(props.version === "minimalist") return extraStyleMinimalist;
+    }} */
+
+    ${({ version } ) => extraStyles[version] }
 
     border-radius: ${theme.borderRadius.round};
     display: flex; 
@@ -42,26 +49,18 @@ const TextInTextputStyled = styled.div`
         font-size:${theme.fonts.sizes.SM};
         width: 100%;
         color:${theme.colors.dark};
-        background: transparent;
+        /* background: transparent; */
         
         &::placeholder{
-            background: ${theme.colors.white};
+            /* background: ${theme.colors.white}; */
             color: ${theme.colors.greyMedium};
         }
     }
-
-    /* ${(props) => {
-    if(props.version === "normal") return extraStyleNormal;
-    if(props.version === "minimalist") return extraStyleMinimalist;
-    }} */
-
-    ${({ version }) => extraStyle[version] }
-
      
 `
 const extraStyleNormal = css`
     background-color: ${theme.colors.white};
-    padding: 18px 28px; 
+    padding: 18px 18px; 
     color: ${theme.colors.greySemiDark};
 
     input{
@@ -69,7 +68,7 @@ const extraStyleNormal = css`
     }
 
     &::placeholder{
-            background: ${theme.colors.white};
+        background: ${theme.colors.white};
     }
 `
 
@@ -79,7 +78,7 @@ const extraStyleMinimalist = css`
     color: ${theme.colors.greyBlue};
 
     input{
-        background:${theme.colors.background_white};
+        background-color:${theme.colors.background_white};
         color: ${theme.colors.dark};
     }
 
@@ -88,7 +87,7 @@ const extraStyleMinimalist = css`
     }
 `
 
-const extraStyle = {
-    extraStyleMinimalist,
-    extraStyleNormal
+const extraStyles = {
+    normal: extraStyleNormal,
+    minimalist: extraStyleMinimalist
 }
