@@ -9,7 +9,7 @@ import { EMPTY_PRODUCT } from './Main/Admin/AdminPanel/AddForm';
 
 export default function OrderPage () {
     //state 
-    const [isModeAdmin, setIsModeAdmin] = useState(true);
+    const [isModeAdmin, setIsModeAdmin] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [isEditSelected ,setIsEditSelected] = useState(true)
     const [isAddSelected, setIsAddSelected] = useState(false)
@@ -36,7 +36,7 @@ export default function OrderPage () {
      }
   
      const resetMenu = () => { 
-        setMenu(fakeMenu.SMALL)
+        setMenu(fakeMenu.MEDIUM)
       }
 
 
