@@ -74,8 +74,8 @@ export default function OrderPage () {
 
 const OrderPageStyled = styled.div`
   background: ${theme.colors.primary};
-  min-height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: auto;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
@@ -85,6 +85,7 @@ const OrderPageStyled = styled.div`
 
   .container{
     margin: auto;
+    height: 833px;
     width: 1400px;
     display: flex;
     flex-direction: column;

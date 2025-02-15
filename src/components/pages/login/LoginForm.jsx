@@ -41,6 +41,8 @@ export default function LoginForm() {
             placeholder={"Entrez votre prénom"} 
             required
             Icon={<BsPersonCircle />}
+            className="input-login"
+            version="normal"
             />
 
             <PrimaryButton
@@ -79,6 +81,9 @@ h2 {
     font-size: ${theme.fonts.sizes.P4};
   }
 
+.input-login{
+    margin: 18px 0; // must be handled in parent
+}
 `
 
 
