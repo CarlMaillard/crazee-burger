@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
+import Button from "../../../../reusable-ui/Button";
+
 
 export default function EmptyMenuAdmin({onReset}) {
 
   return (
   <EmptyMenuAdmintStyled>
-    <span className="top-title">Le menu est vide ?</span>
+    <span className="title">Le menu est vide ?</span>
     <br/>
-    <span className="bottom-title">Cliquez ci-dessous pour le réinitialiser</span>
+    <span className="description">Cliquez ci-dessous pour le réinitialiser</span>
     <br/>
-    {/* <ButtononClick={onReset} Label="Générer de nouveaux produits" /> */}
-    <button onClick={onReset}>CLIQUEZ ICI POUR LE RÉINITIALISER</button>
+    <Button onClick={onReset} Label="Générer de nouveaux produits" />
   </EmptyMenuAdmintStyled> 
   
   )
@@ -21,14 +22,16 @@ const EmptyMenuAdmintStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
 
   font-family: "Amatic SC", cursive;
 
-.top-title{
+.title{
     font-size: ${theme.fonts.sizes.P4};
-    font-weight: ${theme.fonts.weights.bold};
+    font-weight: ${theme.fonts.weights.semiBold};
 }
-.bottom-title{
+
+.description{
     font-size: ${theme.fonts.sizes.P4};
     font-weight: ${theme.fonts.weights.regular};
 }
