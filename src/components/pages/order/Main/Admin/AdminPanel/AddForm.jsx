@@ -8,6 +8,7 @@ import TextInput from "../../../../../reusable-ui/TextInput";
 import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
 import SubmitMessage from "./SubmitMessage";
+import { getInputTextsConfig } from "./inputTextConfig";
 
 export const EMPTY_PRODUCT = {
    id:"",
@@ -19,12 +20,9 @@ export const EMPTY_PRODUCT = {
 export default function AddForm() {
 
   const {handleAddProduct, newProduct, setNewProduct } = useContext(OrderContext)
-
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-
-  
-    const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
       event.preventDefault();
 
       const newProductToAdd = {
@@ -37,33 +35,37 @@ export default function AddForm() {
       displaySuccesMessage()
     }
 
-    const handleChange = (event) => {
+  const handleChange = (event) => {
    
-      const { name, value } = event.target
+  const { name, value } = event.target
       setNewProduct({ ...newProduct, [name]: value })
     }
 
-    const displaySuccesMessage = () => {
+  const displaySuccesMessage = () => {
       setIsSubmitted(true)
       setTimeout(() => {
         setIsSubmitted(false)
       }, 2000);
     }
 
+  const inputTexts = getInputTextsConfig(newProduct)
+
   return(
   <AddFormStyled onSubmit={handleSubmit}> 
-  <ImagePreview imageSource={newProduct.imageSource} tile={newProduct.title} />
+  <ImagePreview imageSource={newProduct.imageSource} title={newProduct.title} />
     <div className="input-fields">
-      <TextInput name="title" value={newProduct.title} type="text" placeholder="Nom du produit (ex: Super Burger)" onChange={handleChange} Icon={<FaHamburger/> } version="minimalist" /> 
-      <TextInput name="imageSource" value={newProduct.imageSource } className={newProduct.imageSource === null ? "coming-soon" : "" } type="text" placeholder="Lien URL d'une image (ex: https://la-photo-du-burger.png)" onChange={handleChange} Icon={<BsFillCameraFill/>} version="minimalist" />
-      <TextInput name="price" value={newProduct.price ? newProduct.price : ""} type="text" placeholder="Prix" onChange={handleChange} Icon={<MdOutlineEuro/>} version="minimalist"/>
+      { inputTexts.map((input) => (
+        <TextInput  
+        name={input.name} 
+        value={input.value} 
+        placeholder={input.placeholder} 
+        onChange={handleChange} 
+        version="minimalist"
+        />
+      ))}
     </div>
-    
     <div  className="submit">
-    
-      
        <Button className="submit-button"  Label={"Ajouter un nouveau produit"} version="success"/>
-  
        {isSubmitted &&  <SubmitMessage/>}
     </div>
   </AddFormStyled>
