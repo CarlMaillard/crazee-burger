@@ -21,11 +21,6 @@ export default function TextInput({
 
 const TextInTextputStyled = styled.div`  
 
-${(props) => {
-    if(props.version === "normal") return extraStyleNormal;
-    if(props.version === "minimalist") return extraStyleMinimalist;
-}}
-
     border-radius: ${theme.borderRadius.round};
     display: flex; 
     justify-content: space-between;
@@ -54,6 +49,14 @@ ${(props) => {
             color: ${theme.colors.greyMedium};
         }
     }
+
+    /* ${(props) => {
+    if(props.version === "normal") return extraStyleNormal;
+    if(props.version === "minimalist") return extraStyleMinimalist;
+    }} */
+
+    ${({ version }) => extraStyle[version] }
+
      
 `
 const extraStyleNormal = css`
@@ -84,3 +87,8 @@ const extraStyleMinimalist = css`
         outline: 0;
     }
 `
+
+const extraStyle = {
+    extraStyleMinimalist,
+    extraStyleNormal
+}
