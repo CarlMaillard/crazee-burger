@@ -5,8 +5,8 @@ import { theme } from '../../theme';
 export default function TextInput({
     value,
     onChange, 
-    Icon, 
     className, 
+    Icon,
     version="normal",  
     ...extraProps
 }) {
@@ -32,7 +32,7 @@ ${(props) => {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    padding: 18px 24px; 
+    /* padding: 18px 24px;  */
 
     .icon{
         display: flex;

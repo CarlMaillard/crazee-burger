@@ -1,9 +1,6 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
 import OrderContext from "../../../../../../context/OrderContext";
-import {FaHamburger} from "react-icons/fa";
-import {BsFillCameraFill} from "react-icons/bs";
-import {MdOutlineEuro} from "react-icons/md";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import Button from "../../../../../reusable-ui/Button";
 import ImagePreview from "./ImagePreview";
@@ -59,6 +56,7 @@ export default function AddForm() {
         key={ input.id}
         name={input.name} 
         value={input.value} 
+        Icon={input.Icon}
         placeholder={input.placeholder} 
         onChange={handleChange} 
         version="minimalist"
@@ -66,7 +64,7 @@ export default function AddForm() {
       ))}
     </div>
     <div  className="submit">
-       <Button className="submit-button"  Label={"Ajouter un nouveau produit"} version="success"/>
+       <Button  className="submit-button"  Label={"Ajouter un nouveau produit"} version="success"/>
        {isSubmitted &&  <SubmitMessage/>}
     </div>
   </AddFormStyled>
@@ -74,8 +72,6 @@ export default function AddForm() {
 }
 
 const AddFormStyled = styled.form`
-border: 1px solid red;
-padding: 30px 5%;
 display: grid;
 grid-template-columns:  1fr 3fr ;
 grid-template-rows:  repeat(4, 1fr);

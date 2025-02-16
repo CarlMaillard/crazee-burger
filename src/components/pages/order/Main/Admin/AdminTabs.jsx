@@ -1,4 +1,4 @@
- import styled from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown , FiChevronUp} from "react-icons/fi";

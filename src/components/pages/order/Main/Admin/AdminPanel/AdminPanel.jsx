@@ -25,11 +25,13 @@ export default function AdminPanel() {
 const AdminPanelStyled = styled.div`
   color: ${theme.colors.dark};
   background:${theme.colors.white};
-  min-height: 250px;
+  min-height: 240px;
   border: 1px solid ${theme.colors.greyLight};
+  box-sizing:border-box;
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
   box-shadow: ${theme.shadows.subtle};
+  padding: 30px 5%;
 
   .input-ajout{
     background-color: ${theme.colors.background_white};
