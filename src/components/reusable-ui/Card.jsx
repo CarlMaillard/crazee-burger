@@ -24,7 +24,7 @@ export default function Card({title, imageSource, leftDescription, hasDeleteButt
           <div className="description">
             <div className="left-description">{leftDescription}</div>
             <div className="right-description"> 
-              <Button className="primary-button" Label={"Ajouter"} version="primary">Ajouter</Button>
+              <Button className="primary-button" Label={"Ajouter"} version="normal">Ajouter</Button>
             </div>
           </div>
         </div>

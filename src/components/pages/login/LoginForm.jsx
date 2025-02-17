@@ -42,6 +42,8 @@ export default function LoginForm() {
             required
             Icon={<BsPersonCircle />}
             className="input-login"
+            version="minimalist"
+
             />
 
             <Button
@@ -82,6 +84,7 @@ h2 {
 
 .input-login{
     margin: 18px 0; // must be handled in parent
+    height: 43px;
 }
 `
 

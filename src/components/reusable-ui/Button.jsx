@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { theme } from '../../theme';
 
 
-export default function Button({Icon, Label, version="primary", onClick}) {
+export default function Button({Icon, Label, version="normal", onClick}) {
   return ( 
     <ButtonStyled  version={version} onClick={onClick}>
                 <span>{Label} </span>
@@ -12,13 +12,7 @@ export default function Button({Icon, Label, version="primary", onClick}) {
 }
 
 const ButtonStyled = styled.button`
-    
     ${({ version }) => extraStyle[version] }
-
-    /* ${(props) => props.version === "normal" &&  extraStylePrimary}
-    ${(props) => props.version === "success" &&  extraStyleSuccess} */
-
-
 `
 
 const extraStylePrimary = css`
@@ -97,6 +91,6 @@ const extraStyleSuccess = css`
 
 
 const extraStyle = {
-    primary: extraStylePrimary,
+    normal: extraStylePrimary,
     success: extraStyleSuccess
 }

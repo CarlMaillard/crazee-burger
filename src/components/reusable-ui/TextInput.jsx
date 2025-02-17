@@ -20,12 +20,6 @@ export default function TextInput({
 }
 
 const TextInTextputStyled = styled.div`  
-/* 
-${(props) => {
-    if(props.version === "normal") return extraStyleNormal;
-    if(props.version === "minimalist") return extraStyleMinimalist;
-    }} */
-
     ${({ version } ) => extraStyles[version] }
 
     border-radius: ${theme.borderRadius.round};
